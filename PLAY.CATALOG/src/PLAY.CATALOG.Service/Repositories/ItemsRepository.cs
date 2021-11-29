@@ -52,7 +52,7 @@ namespace PLAY.CATALOG.Service.Repositories
             FilterDefinition<Item> filter = filterBuilder.Eq(e => e.Id, entity.Id);
             await dbCollection.ReplaceOneAsync(filter, entity);
         }
-        public async Task Removesync(Guid id)
+        public async Task RemoveAsync(Guid id)
         {
             FilterDefinition<Item> filter = filterBuilder.Eq(e => e.Id, id);
             await dbCollection.DeleteOneAsync(filter);
